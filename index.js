@@ -10,6 +10,7 @@ function logger(req, res, next) {
 }
 
 server.use(logger);
+server.use(express.json())
 
 server.use('/api/users', userRouter);
 
