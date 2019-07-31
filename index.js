@@ -1,6 +1,7 @@
 const express = require('express');
 
 const userRouter = require('./users/userRouter');
+const postRouter = require('./posts/postRouter');
 
 const server = express();
 
@@ -13,6 +14,7 @@ server.use(logger);
 server.use(express.json())
 
 server.use('/api/users', userRouter);
+server.use('/api/posts', postRouter);
 
 server.get('/', (req, res) => {
     res.send('webapi-iii-challenge');
