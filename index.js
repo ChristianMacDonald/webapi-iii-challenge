@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 
 const userRouter = require('./users/userRouter');
@@ -20,6 +22,8 @@ server.get('/', (req, res) => {
     res.send('webapi-iii-challenge');
 });
 
-server.listen(8000, () => {
-    console.log("API running on port 8000!");
+const port = process.env.PORT;
+
+server.listen(port, () => {
+    console.log(`API running on port ${port}!`);
 });
